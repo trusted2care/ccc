@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Quick Quote | 5* Service | Come Chat With us</title>
+    <link href="/build/css/style.css"><link rel="stylesheet" href="css/style.css">
+    <script src="/build/js/main.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/21cbe50e7e.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script>
+	  $( function() {
+		$( "#datepicker" ).datepicker({
+		  dateFormat: "DD, d MM yy",
+		  showAnim: "slideDown",
+		  changeMonth: true,
+		  changeYear: true
+		});
+	  } );
+	</script>
+    <style>
+        .quote{
+	background: #f8f8f8;
+	max-width: 1000px;
+	height: auto;
+	margin: 80px auto;
+	padding: 35px;
+	padding-top: 70px;
+	border-radius: 15px;
+	position: relative;
+}
+
+.quote h1{
+	text-align: center;
+	font-size: 3em;
+	font-weight: bold;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+	color: #2196f3;
+}
+
+.quote h2{
+	text-align: center;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+	color: #0d3c64;
+}
+
+.quote p{
+	text-align: center;
+	margin-bottom: 10px;
+	color: #0d3c64;
+	margin: 20px;
+}
+
+.form .label{
+	display: block;
+	color: #555555;
+	margin-bottom: 6px;
+}
+
+.form .social-label{
+	display: inline;
+	color: #555555;
+	margin: 0px 10px 6px 10px;
+	width: 80px;
+}
+
+.form .social{
+	padding: 13px 0 13px 45px;
+	width: 80px;;
+	height: 48px;
+	background-color: white;
+	border: 2px solid #dddddd;
+	border-radius: 15px;
+	margin: 0px 10px 0px 10px;
+}
+
+.form .input{
+	padding: 13px 0 13px 25px;
+	width: 100%;
+	text-align: center;
+	border: 2px solid #dddddd;
+	border-radius: 15px;
+	letter-spacing: 1px;
+	word-wrap: 3px;
+	outline: none;
+	font-size: 16px;
+	color: #555555;
+}
+
+.form .email{
+	padding: 13px 0 13px 25px;
+	width: 100%;
+	text-align: center;
+	border: 2px solid #dddddd;
+	border-radius: 15px;
+	letter-spacing: 1px;
+	word-wrap: 3px;
+	outline: none;
+	font-size: 16px;
+	color: #555555;
+}
+
+.form .textarea{
+	padding: 13px 0 13px 25px;
+	width: 100%;
+	text-align: center;
+	border: 2px solid #dddddd;
+	border-radius: 15px;
+	letter-spacing: 1px;
+	word-wrap: 3px;
+	outline: none;
+	font-size: 16px;
+	color: #555555;
+}
+
+.card-grp{
+	display: flex;
+	justify-content: space-around;
+}
+
+.social-item{
+	width: auto;
+}
+.card-item{
+	width: 48%;
+}
+
+.space{
+	margin-bottom: 20px;
+}
+
+.icon-relative{
+	position: relative;
+}
+
+.far, .fas{
+    font-size: 25px;
+    position: absolute;
+    pointer-events: none;
+    top: 35px;
+    left: 15px;
+    transition: 0.2s ease all;
+}
+
+.icon-relative .fa-whatsapp{
+	position: absolute;
+	bottom: 10px;
+	left: 35px;
+	font-size: 40px;
+	color: #00e676;
+}
+
+.icon-relative .fa-facebook-messenger{
+	position: absolute;
+	bottom: 12px;
+	left: 11px;
+	font-size: 50px;
+	color: #4dabf7;
+}
+
+.icon-relative .fa-tasks{
+	position: absolute;
+	bottom: 22px;
+	left: 11px;
+	font-size: 30px;
+	color: #555555;
+}
+
+.btn{
+	width: 50%;
+	background: #2196f3;
+	padding: 12px;
+	text-align: center;
+	color: #f8f8f8;
+	font-size: 20px;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.quote-logo{
+	position: absolute;
+	top: -50px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 225px;
+	height: 100px;
+	background: #f8f8f8;
+	border-radius: 10%;
+	box-shadow: 0 0 5px rgba(0,0,0,0.2);
+	text-align: center;
+	line-height: 85px;
+}
+
+.quote-logo:before{
+	content: "";
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 215px;
+	height: 90px;
+	background: #2196f3;
+	border-radius: 10%;
+	z-index: -1;
+}
+
+.quote-logo p{
+	color: #f8f8f8;
+	width: 200px;
+	position: relative;
+	font-family: 'Baloo Bhaijaan', cursive;
+	font-size: 58px;
+}
+
+.quote-logo img{
+	height: 100px;
+	padding-left: 6px;
+}
+
+.alert-success{
+  padding: 20px;
+  background-color: #4CAF50;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+.alert-danger{
+  padding: 20px;
+  background-color: #ff9800;
+  color: white;
+  opacity: 1;
+  transition: opacity 0.6s;
+  margin-bottom: 15px;
+  font-size: 20px;
+  border-radius: 15px;
+}
+
+.user-input-wrp {
+	position: relative;
+	width: 48%;
+}
+
+.user-input100-wrp {
+	position: relative;
+	width: 98%;
+	margin-left: 1%;
+}
+.user-textarea-wrp {
+	position: relative;
+	width: 98%;
+	margin-left: 1%;
+}
+.user-input100-wrp .inputText, .user-input-wrp .inputText{
+	padding: 13px 0 13px 25px;
+	width: 100%;
+	text-align: center;
+	border: 2px solid #dddddd;
+	border-radius: 15px;
+	letter-spacing: 1px;
+	word-wrap: 3px;
+	outline: none;
+	font-size: 16px;
+	color: #555555;
+ 	box-shadow: none !important;
+}
+
+.user-textarea-wrp .inputText{
+	padding: 13px 0 13px 25px;
+	width: 100%;
+	text-align: center;
+	border: 2px solid #dddddd;
+	border-radius: 15px;
+	letter-spacing: 1px;
+	word-wrap: 3px;
+	outline: none;
+	font-size: 16px;
+	color: #555555;
+ 	box-shadow: none !important;
+}
+.user-input100-wrp .inputText:focus, .user-input-wrp .inputText:focus{
+	border-color: #2196f3;
+	border-width: medium medium 2px;
+}
+.user-input100-wrp .floating-label, .user-input-wrp .floating-label {
+	position: absolute;
+	pointer-events: none;
+	top: 35px;
+	left: 50px;
+	transition: 0.2s ease all;
+}
+
+.user-textarea-wrp .inputText:focus{
+	border-color: #2196f3;
+	border-width: medium medium 2px;
+}
+.user-textarea-wrp .floating-label {
+	position: absolute;
+	pointer-events: none;
+	top: 35px;
+	left: 50px;
+	transition: 0.2s ease all;
+}
+.user-input-wrp input:focus ~ .floating-label,
+.user-input-wrp input:not(:focus):valid ~ .floating-label{
+	top: 0px;
+	left: 10px;
+	font-size: 13px;
+	opacity: 1;
+}
+.user-input100-wrp input:focus ~ .floating-label,
+.user-input100-wrp input:not(:focus):valid ~ .floating-label{
+	top: 0px;
+	left: 10px;
+	font-size: 13px;
+	opacity: 1;
+}
+
+.user-textarea-wrp textarea:focus ~ .floating-label,
+.user-textarea-wrp textarea:not(:focus):valid ~ .floating-label{
+	top: 0px;
+	left: 10px;
+	font-size: 13px;
+	opacity: 1;
+}
+@media screen and (max-width: 420px){
+	.quote{
+	padding: 0;
+	padding-top: 70px;
+	}
+	.card-grp{
+	flex-direction: column;
+	width: 100%
+	}
+	.card-item{
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	.btn{
+	margin-bottom: 20px;
+	width: 96%;
+	}
+	.form .textarea{
+	padding: 13px 0 13px 25px;
+	width: 100%;
+	height: 100px;
+	text-align: center;
+	border: 2px solid #dddddd;
+	border-radius: 15px;
+	letter-spacing: 1px;
+	word-wrap: 3px;
+	outline: none;
+	font-size: 16px;
+	color: #555555;
+	}
+	.icon-relative .fa-tasks{
+	position: absolute;
+	bottom: 35px;
+	left: 11px;
+	font-size: 30px;
+	color: #555555;
+	}
+	.form .email{
+	font-size: 13px;
+	}
+	.user-input-wrp {
+	width: 98%;
+	margin: auto;
+	}
+	.user-input100-wrp {
+	width: 98%;
+	margin: auto;
+	}
+	.user-textarea-wrp {
+	width: 98%;
+	margin: auto;
+	}
+
+    ol.gradient-list > li, ol.gradient-list > li::before {
+  box-shadow: 0.25rem 0.25rem 0.6rem rgba(0, 0, 0, 0.05), 0 0.5rem 1.125rem rgba(75, 0, 0, 0.05); }
+
+  ol.gradient-list {
+  counter-reset: gradient-counter;
+  list-style: none;
+  margin: 1.75rem 0;
+  padding-left: 1rem;
+  margin-left: 3rem;
+  margin-right: 3rem; }
+  ol.gradient-list > li {
+    background: white;
+    border-radius: 0 0.5rem 0.5rem 0.5rem;
+    counter-increment: gradient-counter;
+    margin-top: 1rem;
+    min-height: 3rem;
+    padding: 1rem 1rem 1rem 3rem;
+    position: relative;
+    line-height: 25px; }
+    ol.gradient-list > li::before, ol.gradient-list > li::after {
+      background: linear-gradient(135deg, #83e4e2 0%, #a2ed56 100%);
+      border-radius: 1rem 1rem 0 1rem;
+      content: '';
+      height: 3rem;
+      left: -1rem;
+      overflow: hidden;
+      position: absolute;
+      top: -1rem;
+      width: 3rem; }
+    ol.gradient-list > li::before {
+      align-items: flex-end;
+      content: counter(gradient-counter);
+      color: #1d1f20;
+      display: flex;
+      font: 900 1.5em/1 'Montserrat';
+      justify-content: flex-end;
+      padding: 0.125em 0.25em;
+      z-index: 1; }
+    ol.gradient-list > li:nth-child(10n+1):before {
+      background: linear-gradient(135deg, rgba(162, 237, 86, 0.2) 0%, rgba(253, 220, 50, 0.2) 100%); }
+    ol.gradient-list > li:nth-child(10n+2):before {
+      background: linear-gradient(135deg, rgba(162, 237, 86, 0.4) 0%, rgba(253, 220, 50, 0.4) 100%); }
+    ol.gradient-list > li:nth-child(10n+3):before {
+      background: linear-gradient(135deg, rgba(162, 237, 86, 0.6) 0%, rgba(253, 220, 50, 0.6) 100%); }
+    ol.gradient-list > li:nth-child(10n+4):before {
+      background: linear-gradient(135deg, rgba(162, 237, 86, 0.8) 0%, rgba(253, 220, 50, 0.8) 100%); }
+    ol.gradient-list > li:nth-child(10n+5):before {
+      background: linear-gradient(135deg, #a2ed56 0%, #fddc32 100%); }
+    ol.gradient-list > li:nth-child(10n+6):before {
+      background: linear-gradient(135deg, rgba(162, 237, 86, 0.8) 0%, rgba(253, 220, 50, 0.8) 100%); }
+    ol.gradient-list > li:nth-child(10n+7):before {
+      background: linear-gradient(135deg, rgba(162, 237, 86, 0.6) 0%, rgba(253, 220, 50, 0.6) 100%); }
+    ol.gradient-list > li:nth-child(10n+8):before {
+      background: linear-gradient(135deg, rgba(162, 237, 86, 0.4) 0%, rgba(253, 220, 50, 0.4) 100%); }
+    ol.gradient-list > li:nth-child(10n+9):before {
+      background: linear-gradient(135deg, rgba(162, 237, 86, 0.2) 0%, rgba(253, 220, 50, 0.2) 100%); }
+    ol.gradient-list > li:nth-child(10n+10):before {
+      background: linear-gradient(135deg, rgba(162, 237, 86, 0) 0%, rgba(253, 220, 50, 0) 100%); }
+    ol.gradient-list > li + li {
+      margin-top: 2rem; }
+}
+.main {
+  display: block;
+  margin: 0 auto;
+  max-width: 40rem;
+  padding: 1rem; }
+    </style>
+</head>
+<body class="min-h-screen bg-slate-50 dark:bg-black dark:text-white bg-cover bg-center bg-[url('/build/img/backgroundcasinonew.jpg')]">
+    <!-- Load Facebook SDK for JavaScript -->
+<div id="fb-root"></div>
+<script src="js/messengerchat.js"></script>
+<!-- Your customer chat code -->
+<div class="fb-customerchat"
+attribution=setup_tool
+page_id="670009506357995"
+theme_color="#0084ff"
+logged_in_greeting="Hi! Have you a question about I how I can make your Birthday Extra Special?"
+logged_out_greeting="Have you a question I can help you with? Just Login and ask away!">
+</div>
+    <header class="bg-teal-700 text-white">
+        <section class="flex-row md:flex text-center w-screen">
+            <div class="lg:w-1/2">
+                <a href="index.html">
+                <img src="img/logo.png" alt="Casino_Casino_Casino_Logo" name="Logo" class=" mx-auto max-h-[32rem] p-2.5" id="Logo">
+                </a>
+            </div>
+            <section class="max-w-[100%] mx-auto p-2.5  md:my-auto lg:w-1/2">
+                <h3 class="text-4xl hover:opacity-50">
+                    <a href="tel:07834348169">07834 348 169</a>
+                </h3>
+                <h3 class="text-1xl sm:text-2xl hover:opacity-50 ">
+                    <a href="mailto:info@casinocasinocasino.co.uk">info@casinocasinocasino.co.uk</a>
+                </h3>
+            </section>
+        </section>
+    </header>
+    <nav aria-label="primary-navigation" id="ddmenu" >
+        <div class="menu-icon"></div>
+        <ul>
+            <li class="no-sub">
+                <a class="top-heading" href="index.php">Home</a>
+            </li>
+            <li>
+                <span class="top-heading">Your Event</span>
+                <i class="caret"></i>
+                <div class="dropdown">
+                    <div class="dd-inner">
+                        <ul class="column">
+                            <li><h3>Casino Events</h3></li>
+                            <li><a href="#">Weddings</a></li>
+                            <li><a href="#">Birthdays</a></li>
+                            <li><a href="#">Corporate</a></li>
+                            <li><a href="#">Charity Nights</a></li>
+                            <li><a href="#">Anniversarys</a></li>
+                        </ul>
+                        <ul class="column">
+                            <li><h3>Casino Tables</h3></li>
+                            <li><a href="#">Seasonal Events</a></li>
+                            <li><a href="#">Work Events</a></li>
+                            <li><a href="#">Christmas Parties</a></li>
+                            <li><a href="#">Bar/Bat Mitzvah</a></li>
+                            <li><a href="#">End of Season Awards</a></li>
+                        </ul>
+                        <ul class="column mayHide">
+                            <li><br /><img class="w-40" src="../build/img/main_menu_images/wedding_rings_w100px.png" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="full-width">
+                <span class="top-heading">Locations</span>
+                <i class="caret"></i>
+                <div class="dropdown">
+                    <div class="dd-inner">
+                        <ul class="column">
+                            <li><h3>Lancashire</h3></li>
+                            <li><a href="#">Blackpool</a></li>
+                            <li><a href="#">Preston</a></li>
+                            <li><a href="#">Lancaster</a></li>
+                            <li><a href="#">Blackburn</a></li>
+                            <li><a href="#">Bolton</a></li>
+                            <li><a href="#">Clitheroe</a></li>
+                        </ul>
+                        <ul class="column">
+                            <li><h3>Cumbria</h3></li>
+                            <li><a href="#">Windermere</a></li>
+                            <li><a href="#">Penrith</a></li>
+                            <li><a href="#">Keswick</a></li>
+                            <li><a href="#">Carlisle</a></li>
+                            <li><a href="#">Kendal</a></li>
+                        </ul>
+                        <ul class="column">
+                            <li><h3>Manchester</h3></li>
+                            <li><a href="#">Manchester</a></li>
+                            <li><a href="#">Salford</a></li>
+                            <li><a href="#">Oldham</a></li>
+                            <li><a href="#">Bury</a></li>
+                            <li><a href="#">Trafford</a></li>
+                        </ul>
+                        <ul class="column">
+                            <li><h3>Merseyside</h3></li>
+                            <li><a href="#">Liverpool</a></li>
+                            <li><a href="#">St Helens</a></li>
+                            <li><a href="#">Wirral</a></li>
+                            <li><a href="#">Warrington</a></li>
+                            <li><a href="#">Haydock</a></li>
+                        </ul>
+                        <ul class="column">
+                            <li><h3>Cheshire</h3></li>
+                            <li><a href="#">Chester</a></li>
+                            <li><a href="#">Stockport</a></li>
+                            <li><a href="#">Knutsford</a></li>
+                            <li><a href="#">Cheadle Hume</a></li>
+                            <li><a href="#">Tarporley</a></li>
+                        </ul>
+                        <ul class="column mayHide">
+                            <li><br /><img src="../build/img/main_menu_images/North_West_Counties_small.png" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <a class="top-heading" href="#">Games</a>
+                <i class="caret"></i>
+                <div class="dropdown offset300">
+                    <div class="dd-inner">
+                        <ul class="column">
+                            <li><h3>Deal A Winner!</h3></li>
+                            <li><a href="#">Roulette</a></li>
+                            <li><a href="#">Blackjack</a></li>
+                            <li><a href="#">Craps</a></li>
+                            <li><a href="#">Wheel of Fortune</a></li>
+                        </ul>
+                        <ul class="column">
+                            <li><h3>Quality Casinos</h3></li>
+                            <li><a href="#">Texas Hold'em</a></li>
+                            <li><a href="#">Stud Poker</a></li>
+                            <li><a href="#">LED Roulette</a></li>
+                            <li><a href="#">LED Blackjack</a></li>
+                        </ul>
+                        <ul class="column mayHide">
+                            <li><br /><img src="../build/img/main_menu_images/blackjack_card.png" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="no-sub">
+                <a class="top-heading" href="index.php">Pricing</a>
+            </li>
+            <li>
+                <span class="top-heading">Theming</span>
+                <i class="caret"></i>
+                <div class="dropdown offset300">
+                    <div class="dd-inner">
+                        <ul class="column">
+                            <li><h3>Popular Themes</h3></li>
+                            <li><a href="#">Las Vegas Casino Nights</a></li>
+                            <li><a href="#">James Bond Evenings</a></li>
+                            <li><a href="#">Wild West Nights</a></li>
+                        </ul>
+                        <ul class="column">
+                            <li><h3>Other Themes</h3></li>
+                            <li><a href="#">Black and White</a></li>
+                            <li><a href="#">Hollywood / Oscars</a></li>
+                            <li><a href="#">Masquerade Ball Party</a></li>
+                            <li><a href="#">Gangster Theme Night</a></li>
+                        </ul>
+                        <ul class="column mayHide">
+                            <li><br /><img src="../build/img/main_menu_images/giant_gold_glitter_dice.png" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <span class="top-heading">More Entertainment</span>
+                <i class="caret"></i>
+                <div class="dropdown offset300">
+                    <div class="dd-inner">
+                        <ul class="column">
+                            <li><h3>Extra Entertainment</h3></li>
+                            <li><a href="#">Chocolate Fountains</a></li>
+                            <li><a href="#">Photo Booth</a></li>
+                            <li><a href="#">Magic Mirror</a></li>
+                            <li><a href="#">Close up Maigician</a></li>
+                            <li><a href="#">Show Girls</a></li>
+                        </ul>
+                        <ul class="column">
+                            <li><h3>More Atmosphere</h3></li>
+                            <li><a href="#">Red Carpet & Flame Lights</a></li>
+                            <li><a href="#">Show Girls</a></li>
+                            <li><a href="#">LED Dancefloors</a></li>
+                            <li><a href="#">LED Letters</a></li>
+                            <li><a href="#">Casino Themed Props</a></li>
+                        </ul>
+                        <ul class="column mayHide">
+                            <li><br /><img src="../build/img/main_menu_images/champers.jpg" /></li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="no-sub">
+                <a class="top-heading" href="#">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="bg-[#f8f8f8] max-w-[1000px] h-auto my-20 mx-auto p-9 pt-20 rounded-2xl relative">
+        <div class="absolute -top-[50px] left-[50%] -translate-x-[50%] w-[225px] h-[100px] rounded-2xl shadow-[0_0_5px_rgba(0,0,0,0.2)] bg-[#f8f8f8] text-center leading-10 before:content-[''] before:absolute before:top-[5px] before:left-[5px] before:w-[215px] before:h-[90px] before:bg-[#2196f3] before:rounded-2xl before:-z-[1]">
+            <img class="h-24 pl-2" src="https://www.casinocasinocasino.co.uk/images/logo4.png" alt="logo"/>
+        </div>
+    <h1 class="text-center text-5xl font-bold tracking-widest mb-5 text-[#2196f3]">Quick Quote</h1>
+    <p class="text-center text-[#0d3c64] m-5">It is always great to speak with you on the phone, but I appreciate you may prefer e-mail, Messenger or WhatsApp.</p>
+	<p class="text-center text-[#0d3c64] m-5">In order for me to give you an accurate quote, I would need to know:</p>
+    <!-- <div class="box-border text-center m-0 p-0 block">
+        <ol class="list-none my-7 mx-12 pl-4">
+            <li class="bg-white rounded-2xl rounded-tl-lg rounded-l-lg mt-4 min-h-[3rem] p-4 pl-12 relative leading-6 before:bg-gradient-to-r from-[#83e4e2] to-[blue-500] (135deg,  0%, #a2ed56 100%);">A date (If you have one)<br>i.e. 27.07.2020</li>
+            <li>A location (town/city)<br>i.e. Manchester</li>
+            <li>What you are wanting me to quote for:<br>
+            i.e. can you quote me for a roulette and blackjack table for my 30th birthday party.</li>
+
+        </ol>
+
+    </div> -->
+
+    <div class="box-border text-center m-0 p-0 block ">
+        <!-- <?php if($msg != ''): ?>
+            <div class="alert <?php echo $msgClass; ?>"><?php echo $msg; ?></div>
+        <?php endif; ?> -->
+        <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+        <h2>What we Need to Know:</h2>
+
+        <div class="flex justify-around mb-5">
+            <div class="relative w-[48%]">
+              <br/>
+              <input style="display:block" type="text" class="block pt-3 pr-0 pb-3 pl-6 w-full text-center border-2 border-solid border-[#dddddd] rounded-2xl tracking-wide outline-none text-base text-[#555555] shadow-none focus:border-[#2196f3] focus:border-2" id="datepicker" name="event-date" required data-mask="00 / 00 / 0000" >
+              <span class="far fa-calendar-alt"></span>
+              <span class="absolute pointer-events-none top-9 left-12 transition ease-in-out duration-200 focus:top-24 focus:float-right focus:text-xs focus:opacity-100 floating-label">Event Date: click and select</span>
+            </div>
+            <div class="user-input-wrp">
+              <br/>
+              <input type="text" class="inputText" name="location" required >
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="floating-label">i.e. Manchester</span>
+            </div>
+        </div>
+        <div class="card space">
+            <div class="user-textarea-wrp">
+                  <br/>
+                  <textarea class="inputText" name="message" required></textarea>
+                  <span class="fas fa-tasks"></span>
+                  <span class="floating-label">What you need a price on i.e. 2 Casino Tables for a wedding</span>
+            </div>
+        </div>
+        <h2>How to Contact You:</h2>
+        <div class="card space">
+            <div class="user-input100-wrp">
+                <br/>
+                <input type="text" class="inputText" name="name" required>
+                <span class="far fa-user"></span>
+                <span class="floating-label">It would be nice to know your name!</span>
+            </div>
+        </div>
+        <div class="card-grp space">
+            <div class="user-input-wrp">
+              <br/>
+              <input type="tel" class="inputText" name="telephone_number" required data-mask="00000 000000" >
+              <span class="fas fa-mobile-alt"></span>
+              <span class="floating-label">Telephone Number i.e. 07834 348169</span>
+            </div>	
+            <div class="social-item icon-relative">
+            <label class="social-label">WhatsApp:</label>	
+                <div class="social" name="whatsapp"></div>
+            <a href="https://wa.me/00447834348169" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="user-input-wrp">
+              <br/>
+              <input type="text" class="inputText" name="email" required >
+              <span class="fas fa-at"></span>
+              <span class="floating-label">E-Mail Address (don't forget the @)</span>
+            </div>
+        </div>
+        <div class="card-grp space">			
+        </div>
+        
+            <div class="grid gap-8 items-start justify-center">
+                <button type='submit' name="submit" class="m-auto">
+                    <div class="mt-4 mb-4">
+                        <div class="relative group">
+                            <div class="absolute -inset-0.5 bg-gradient-to-r from-pink-600 to-purple-600 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200 animate-tilt"></div>
+                            <div class="inline-block px-3 py-3 rounded-full shadow-lg bg-indigo-500 hover:bg-dark_purple hover:-translate-y-0.5 focus:outline-none focus:ring focus:ring-offset-2 focus:ring-indigo-500 focus:ring-opacity-50 active:bg-indigo-600 transform transition text-white tracking-wider font-semibold text-sm" href="#"><span class="flex items-center md:space-x-3 lg:space-x-0">
+                                <i class="px-1 w-10 h-10 rounded-full group-hover:rotate-[360deg] group-hover:duration-1000 text-pink-600 font-normal text-4xl transition duration-300 ease-out hover:ease-in hover:text-white fa fa-clipboard-list"></i>
+                                <span class="px-2 lg:text-lg text-gray-100">Submit Enquiry</span>
+                            </div>
+                        </div>
+                    </div>
+                </button>
+            </div>
+        
+        </form>
+        
+    </div>
+
+</div>
+
+
+
+<footer class="bg-[#efefef66] box-border w-full text-center p-2.5 mt-5 align-top flex flex-col md:flex-row justify-center mx-auto">
+    <div class="w-full leading-7 text-lg block pb-5 md:w-1/3 md:flex-row md:pb-0">
+        <img src="img/logo.png" alt="Casino_Casino_Casino_Logo" name="Logo" class="max-h-40 mx-auto" id="Logo"><br>
+        <a class="text-dark_purple hover:text-white transition duration-300 ease-out hover:ease-in" href="index.php">Home</a>
+            ·
+        <a class="text-dark_purple hover:text-white transition duration-300 ease-out hover:ease-in" href="contact_details.php">Contact</a>
+            ·
+        <a class="text-dark_purple hover:text-white transition duration-300 ease-out hover:ease-in" href="about_us.php">About Us</a><br class="hidden md:block">
+            ·
+        <a class="text-dark_purple hover:text-white transition duration-300 ease-out hover:ease-in" href="#">Sitemap</a>
+            ·
+        <a class="text-dark_purple hover:text-white transition duration-300 ease-out hover:ease-in" target="_blank" href="PLI - 2017.pdf">Insurance</a>
+        <br />
+        <p class="text-dark_purple text-base font-bold ; "><br />
+            Casino Casino Casino &copy; 2023</p>
+    </div>
+    <div class="leading-7 text-base block pb-5 md:inline-block md:w-1/3 md:my-auto md:pb-0 md:text-lg">
+        <address class="w-full block space-x-4 pb-5">
+            <div class="inline-block md:block lg:inline-block align-top">
+                <i class="w-9 h-9 p-2 font-normal text-lg rounded-full transition duration-300 ease-out hover:ease-in bg-dark_purple hover:bg-[#009746] fa fa-map-marker text-white"></i>
+            </div>
+            <p class="inline-block md:text-lg text-dark_purple">7 Ruthin Drive<br />
+            Thornton Cleveleys<br />
+            Lancashire FY4 4FE</p>
+        </address>
+        <div class="w-full block space-x-4 pb-5">
+            <div class="inline-block md:block lg:inline-block align-top">
+                <a href="tel:07834348169"><i class="w-9 h-9 p-2 font-normal text-lg rounded-full transition duration-300 ease-out hover:ease-in bg-dark_purple hover:bg-[#009746]  fa fa-phone text-white"></i></a>
+            </div>
+            <a class="inline-block md:text-lg transition duration-300 ease-out hover:ease-in text-dark_purple hover:text-white" href="tel:07834348169">07834 348 169</a>
+        </div>
+        <div class="w-full block space-x-4 pb-5 ">
+            <div class="inline-block align-top">
+                <a href="mailto:info@casinocasinocasino.co.uk"><i class="w-9 h-9 p-2 font-normal text-lg rounded-full transition duration-300 ease-out hover:ease-in bg-dark_purple hover:bg-[#009746]  text-white fa fa-envelope"></i></a>
+            </div>
+            <a class="text-dark_purple md:text-lg transition duration-300 ease-out hover:ease-in hover:text-white" href="mailto:info@casinocasinocasino.co.uk">info@casinocasinocasino.co.uk</a>
+        </div>
+    </div>
+
+    <div class="leading-7 text-lg block pb-5 md:w-1/3 md:pb-0">
+        <div class="w-full block space-x-4 pb-5">
+            <p class="inline-block bg-dark_purple text-white rounded-full py-2 px-4">Casino Casino Casino Ltd<br> The best in fun casino hire</p>
+        </div>
+      
+        <div class="w-full block space-x-4 md:space-x-0 pb-5 md:pb-0">
+            <div class="inline-block md:block md:pb-5 align-top">
+                <a href="https://www.facebook.com/casinocasinocasinoltd" target="_blank"><i class="w-9 h-9 p-2 font-normal text-lg rounded-full bg-dark_purple transition duration-300 ease-out hover:ease-in hover:bg-[#3b5998] text-white fa fa-facebook "></i></a>
+            </div>
+            <div class="inline-block md:block md:pb-5  align-top">
+                <a href="https://wa.me/00447834348169" target="_blank"><i class="w-9 h-9 p-2 font-normal text-lg rounded-full  bg-dark_purple transition duration-300 ease-out hover:ease-in hover:bg-[#25d366] text-white fa fa-whatsapp"></i></a>
+            </div>
+            <div class="inline-block md:block md:pb-5  align-top">
+                <a href="https://goo.gl/maps/DU7r1PyWbPUSEkwQ6" target="_blank"><i class="w-9 h-9 p-2 font-normal text-lg rounded-full  bg-dark_purple transition duration-300 ease-out hover:ease-in hover:bg-[#1aa260] text-white fa fa-google-plus"></i></a>
+            </div>
+            <div class="inline-block md:block md:pb-5  align-top">
+                <a href="https://twitter.com/FunCasinoNW" target="_blank"><i class="w-9 h-9 p-2 font-normal text-lg rounded-full  bg-dark_purple transition duration-300 ease-out hover:ease-in hover:bg-[#1da1f2] text-white fa fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+</body>
+</html>
